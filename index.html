@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPEC SAINT BABETH – Excellence in Education, Byumba</title>
+<!-- Linking codes of CSS -->
+<style>
+  :root {
+    --royal: #0a2342;
+    --gold: #c9953a;
+    --gold-light: #e8b96a;
+    --cream: #faf7f2;
+    --white: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --accent: #e63946;
+    --green: #2d6a4f;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    background: rgba(10,35,66,0.97);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    height: 72px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-emblem {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--royal);
+    box-shadow: 0 2px 12px rgba(201,149,58,0.4);
+    flex-shrink: 0;
+  }
+  .logo-emblem img{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+  .logo-text {
+    display: flex; flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .logo-text span:first-child {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .logo-text span:last-child {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 6px;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--gold);
+    background: rgba(201,149,58,0.1);
+  }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--royal) !important;
+    font-weight: 600 !important;
+    padding: 8px 18px !important;
+    border-radius: 6px !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold-light) !important;
+    transform: translateY(-1px);
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .hamburger span {
+    width: 24px; height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    background:
+      linear-gradient(160deg, rgba(10,35,66,0.88) 0%, rgba(10,35,66,0.7) 50%, rgba(45,106,79,0.5) 100%),
+      url(cpec1.png) center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 80% 20%, rgba(201,149,58,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 20% 80%, rgba(45,106,79,0.2) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    padding: 80px 8%;
+    max-width: 760px;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,149,58,0.2);
+    border: 1px solid rgba(201,149,58,0.5);
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  .hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 72px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .hero-content h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(14px, 2vw, 18px);
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 12px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gold-light);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 36px;
+  }
+
+  .hero-location::before { content: '📍'; }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--royal);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(201,149,58,0.4);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(201,149,58,0.5);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 30px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.25s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 48px; right: 8%;
+    display: flex;
+    gap: 32px;
+    animation: fadeUp 1.1s 0.3s ease both;
+  }
+
+  .stat-item { text-align: center; }
+
+  .stat-item .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-item .label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── SECTIONS SHARED ── */
+  section { padding: 100px 8%; }
+
+  .section-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 900;
+    color: var(--royal);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 580px;
+    font-weight: 300;
+  }
+
+  /* ── DEPARTMENTS ── */
+  #departments {
+    background: var(--white);
+  }
+
+  .dept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-top: 56px;
+  }
+
+  .dept-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: all 0.35s;
+    cursor: pointer;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .dept-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(10,35,66,0.12);
+  }
+
+  .dept-card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .dept-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,35,66,0.7), transparent);
+  }
+
+  .dept-card-level {
+    position: absolute;
+    top: 16px; left: 16px;
+    z-index: 2;
+    background: var(--gold);
+    color: var(--royal);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .dept-card-body { padding: 24px; }
+
+  .dept-card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--royal);
+    margin-bottom: 8px;
+  }
+
+  .dept-card-body p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .dept-card-body .classes {
+    display: flex;
+    gap: 6px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  .class-pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(10,35,66,0.07);
+    color: var(--royal);
+    border: 1px solid rgba(10,35,66,0.12);
+  }
+
+  /* ── WORKSHOPS ── */
+  #workshops {
+    background: var(--royal);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #workshops::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,149,58,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  #workshops .section-title { color: var(--white); }
+  #workshops .section-desc { color: rgba(255,255,255,0.6); }
+
+  .workshop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 56px;
+  }
+
+  @media (max-width: 768px) {
+    .workshop-grid { grid-template-columns: 1fr; }
+  }
+
+  .workshop-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 36px;
+    transition: all 0.35s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .workshop-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(to bottom, var(--gold), var(--gold-light));
+    border-radius: 4px 0 0 4px;
+  }
+
+  .workshop-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateX(6px);
+    border-color: rgba(201,149,58,0.4);
+  }
+
+  .ws-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .workshop-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .workshop-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+
+  .ws-skills {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ws-skill-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    border: 1px solid rgba(201,149,58,0.4);
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    #about { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .about-img-wrap {
+    position: relative;
+  }
+
+  .about-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+  }
+
+  .about-img-deco {
+    position: absolute;
+    bottom: -24px; right: -24px;
+    width: 180px; height: 180px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 16px;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  .about-badge {
+    position: absolute;
+    top: 24px; left: -20px;
+    background: var(--royal);
+    color: var(--white);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(10,35,66,0.3);
+    border-left: 4px solid var(--gold);
+  }
+
+  .about-text .section-desc { margin-bottom: 24px; }
+
+  .value-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .value-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  .value-list li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 12px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--white);
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--royal);
+    margin-bottom: 20px;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .info-icon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .info-item h4 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .info-item p {
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  .contact-form {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #e8e0d6;
+  }
+
+  .contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--royal);
+    margin-bottom: 28px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--royal);
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0d8cc;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--white);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201,149,58,0.12);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-error {
+    font-size: 12px;
+    color: var(--accent);
+    margin-top: 4px;
+    display: none;
+  }
+
+  .form-success {
+    display: none;
+    background: #ecfdf5;
+    border: 1px solid #6ee7b7;
+    color: var(--green);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--royal);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 40px 8%;
+    border-top: 2px solid var(--gold);
+  }
+
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  footer p { font-size: 13px; line-height: 1.8; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,35,66,0.7);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+    padding: 20px;
+  }
+
+  .modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 48px 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s;
+    border-top: 4px solid var(--gold);
+  }
+
+  .modal-overlay.open .modal {
+    transform: scale(1);
+  }
+
+  .modal-icon { font-size: 56px; margin-bottom: 16px; }
+
+  .modal h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--royal);
+    margin-bottom: 12px;
+  }
+
+  .modal p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--muted);
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  /* ── SCROLL TOP ── */
+  #scrollTop {
+    position: fixed;
+    bottom: 32px; right: 32px;
+    width: 44px; height: 44px;
+    background: var(--gold);
+    color: var(--royal);
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(201,149,58,0.5);
+    z-index: 900;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+  }
+
+  #scrollTop.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── MOBILE NAV ── */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: rgba(10,35,66,0.98);
+      flex-direction: column;
+      padding: 24px 24px 32px;
+      gap: 4px;
+      transform: translateY(-120%);
+      transition: transform 0.35s ease;
+    }
+
+    .nav-links.open { transform: translateY(0); }
+    .hamburger { display: flex; }
+    .hero-stats { position: static; margin-top: 48px; flex-wrap: wrap; gap: 24px; }
+    #home { flex-direction: column; }
+    .hero-content { padding: 60px 6% 0; }
+    section { padding: 72px 6%; }
+  }
+
+  /* ── ANIMATE ON SCROLL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+  
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <div class="logo-emblem"><img src="logo.png" alt="School's logo"></div>
+    <div class="logo-text">
+      <span>CPEC SAINT BABETH</span>
+      <span>Byumba, Rwanda</span>
+    </div>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#departments">Departments</a></li>
+    <li><a href="#workshops">Workshops</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+    <li><a href="#contact" class="nav-cta">Apply Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Est. 2024— Byumba, Rwanda</div>
+    <h1>Shaping<br>Tomorrow's<br><em>Leaders</em></h1>
+    <p class="hero-subtitle">Quality General & Technical Education for a Brighter Future</p>
+    <div class="hero-location">Byumba, Northern Province, Rwanda</div>
+    <div class="hero-buttons">
+      <button class="btn-primary" onclick="openModal()">Apply Now →</button>
+      <button class="btn-secondary" onclick="document.getElementById('departments').scrollIntoView({behavior:'smooth'})">Explore Programs</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="num">3</div>
+      <div class="label">O-Level Years</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">2</div>
+      <div class="label">Tech Workshops</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">100%</div>
+      <div class="label">Commitment</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPARTMENTS -->
+<section id="departments">
+  <div class="reveal">
+    <div class="section-tag">Academic Programs</div>
+    <h2 class="section-title">Our Departments</h2>
+    <p class="section-desc">We offer a strong Ordinary Level curriculum across three years, building a solid academic foundation for every student.</p>
+  </div>
+  <div class="dept-grid">
+    <div class="dept-card reveal" onclick="showDeptInfo('General Studies')">
+      <div class="dept-card-img" style="background-image:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80')">
+        <span class="dept-card-level">Ordinary Level</span>
+      </div>
+      <div class="dept-card-body">
+        <h3>General Studies</h3>
+        <p>A comprehensive curriculum covering Mathematics, Sciences, Languages, and Humanities to build well-rounded students ready for higher education.</p>
+        <div class="classes">
+          <span class="class-pill">Senior 1</span>
+          <span class="class-pill">Senior 2</span>
+          <span class="class-pill">Senior 3</span>
+        </div>
+      </div>
+    </div>
+    <div class="dept-card reveal" onclick="showDeptInfo('Software Development')">
+      <div class="dept-card-img" style="background-image:url(sod-lab.png)">
+        <span class="dept-card-level">Advanced Level (Software Development)</span>
+      </div>
+      <div class="dept-card-body">
+        <h3>Software Development</h3>
+        <p>Dedicated focus on JavaScript, Website Development, Version Control, and VUE.JS Framework with hands-on lab experiments and problem-solving activities.</p>
+        <div class="classes">
+          <span class="class-pill">Version Control</span>
+          <span class="class-pill">Web Development</span>
+          <span class="class-pill">JavaScript Fundamental</span>
+        </div>
+      </div>
+    </div>
+    <div class="dept-card reveal" onclick="showDeptInfo('Multimedia Production')">
+      <div class="dept-card-img" style="background-image:url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80')">
+        <span class="dept-card-level">Advanced Level (Multimedia Production)</span>
+      </div>
+      <div class="dept-card-body">
+        <h3>Multimedia Production</h3>
+        <p>This deals with Video Editing, Sound Editing, Setting and Operating Cameras, Animation and even Artistic Drawing. It enables students to be capable of producing anything related to Multimedia. </p>
+        <div class="classes">
+          <span class="class-pill">Video Edit</span>
+          <span class="class-pill">Sound Edit</span>
+          <span class="class-pill">Operate Camera</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOPS -->
+<section id="workshops">
+  <div class="reveal">
+    <div class="section-tag" style="color: var(--gold-light);">Technical Training</div>
+    <h2 class="section-title">Our Workshops</h2>
+    <p class="section-desc">Gain hands-on, industry-relevant technical skills that prepare you for the digital economy.</p>
+  </div>
+  <div class="workshop-grid">
+    <div class="workshop-card reveal">
+      <span class="ws-icon">💻</span>
+      <h3>Software Development</h3>
+      <p>Learn to design, build, and deploy modern software applications. Students gain practical programming skills from beginner to advanced level, working on real projects.</p>
+      <div class="ws-skills">
+        <span class="ws-skill-tag">HTML & CSS</span>
+        <span class="ws-skill-tag">JavaScript</span>
+        <span class="ws-skill-tag">Python</span>
+        <span class="ws-skill-tag">Databases</span>
+        <span class="ws-skill-tag">Web Apps</span>
+      </div>
+    </div>
+    <div class="workshop-card reveal">
+      <span class="ws-icon">🎬</span>
+      <h3>Multimedia Workshop</h3>
+      <p>Explore the world of digital media — from graphic design and video production to audio editing and digital marketing. Unlock your creativity with professional tools.</p>
+      <div class="ws-skills">
+        <span class="ws-skill-tag">Graphic Design</span>
+        <span class="ws-skill-tag">Video Editing</span>
+        <span class="ws-skill-tag">Photography</span>
+        <span class="ws-skill-tag">Audio Production</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap reveal">
+    <img src="cpec1.png" alt="School students" class="about-img">
+    <div class="about-img-deco"></div>
+    <div class="about-badge">🏫 Private Institution<br>Byumba, Rwanda</div>
+  </div>
+  <div class="about-text reveal">
+    <div class="section-tag">About Us</div>
+    <h2 class="section-title">Who We Are</h2>
+    <p class="section-desc">CPEC SAINT BABETH is a private educational institution in Byumba committed to providing quality general and technical education. We believe every student deserves access to modern learning that opens doors to opportunity.</p>
+    <p class="section-desc" style="margin-top: 16px;">Our dedicated teachers, modern facilities, and practical workshops create an environment where students thrive — academically and technically.</p>
+    <ul class="value-list" style="margin-top: 28px;">
+      <li>Qualified and passionate teaching staff</li>
+      <li>Modern classrooms and computer labs</li>
+      <li>Strong emphasis on practical, hands-on learning</li>
+      <li>Safe, inclusive, and supportive environment</li>
+      <li>Affordable quality education for the Byumba community</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal" style="text-align:center; margin-bottom: 8px;">
+    <div class="section-tag" style="text-align:center;">Get in Touch</div>
+    <h2 class="section-title" style="text-align:center;">Contact Us</h2>
+    <p class="section-desc" style="margin: 0 auto; text-align:center;">Have questions about enrollment, programs, or fees? We're here to help.</p>
+  </div>
+  <div class="contact-layout">
+    <div class="contact-info reveal">
+      <h3>Reach Us Directly</h3>
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div>
+          <h4>Location</h4>
+          <p>Byumba, Northern Province<br>Rwanda</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div>
+          <h4>Phone</h4>
+          <p>+250 788 451 698</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <p>cpecsaintbabeth@gmail.com</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🕐</div>
+        <div>
+          <h4>Office Hours</h4>
+          <p>Mon – Fri: 7:30 AM – 5:00 PM<br>Sat: 8:00 AM – 12:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <h3>Send Us a Message</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name *</label>
+          <input type="text" id="firstName" placeholder="Enter your first name">
+          <span class="form-error" id="firstNameErr">Please enter your first name.</span>
+        </div>
+        <div class="form-group">
+          <label>Last Name *</label>
+          <input type="text" id="lastName" placeholder="Enter your last name">
+          <span class="form-error" id="lastNameErr">Please enter your last name.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="email" placeholder="your@email.com">
+        <span class="form-error" id="emailErr">Please enter a valid email.</span>
+      </div>
+      <div class="form-group">
+        <label>Interested In</label>
+        <select id="program">
+          <option value="">-- Select a Program --</option>
+          <option>Ordinary Level (S1 – S3)</option>
+          <option>Software Development Workshop</option>
+          <option>Multimedia Workshop</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Message *</label>
+        <textarea id="message" placeholder="Write your message here…"></textarea>
+        <span class="form-error" id="messageErr">Please enter a message.</span>
+      </div>
+      <button class="btn-primary" style="width:100%; justify-content:center;" onclick="submitForm()">Send Message →</button>
+      <div class="form-success" id="formSuccess">
+        ✅ Thank you! Your message has been received. We'll get back to you shortly.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">CPEC SAINT BABETH</div>
+  <p>Private Educational Institution · Byumba, Northern Province, Rwanda</p>
+  <p style="margin-top: 12px;">© 2025 CPEC SAINT BABETH. All rights reserved. · Designed with ❤️ for quality education.</p>
+</footer>
+
+<!-- APPLY NOW MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-icon">🎓</div>
+    <h2>Ready to Join Us?</h2>
+    <p>Applications for the new academic year are now open. Visit us in Byumba or use the contact form below to start your journey with CPEC SAINT BABETH.</p>
+    <button class="btn-primary" style="width:100%; margin-bottom:12px" onclick="closeModal(); document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Fill in the Contact Form
+    </button>
+    <button class="btn-secondary" style="width:100%" onclick="closeModal()">Maybe Later</button>
+  </div>
+</div>
+
+<!-- SCROLL TOP BUTTON -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // ── MOBILE NAV ──
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // ── ACTIVE NAV ON SCROLL ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+
+    // scroll top button
+    const scrollBtn = document.getElementById('scrollTop');
+    if (window.scrollY > 400) scrollBtn.classList.add('visible');
+    else scrollBtn.classList.remove('visible');
+  });
+
+  // ── REVEAL ON SCROLL ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── MODAL ──
+  function openModal() {
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ── DEPT CARD INFO ──
+  function showDeptInfo(dept) {
+    // small toast
+    const toast = document.createElement('div');
+    toast.style.cssText = `
+      position:fixed; bottom:100px; left:50%; transform:translateX(-50%);
+      background:var(--royal); color:#fff; padding:12px 24px;
+      border-radius:8px; font-size:14px; font-weight:600;
+      border-left:4px solid var(--gold); z-index:3000;
+      animation: toastIn 0.3s ease;
+      white-space:nowrap;
+    `;
+    toast.textContent = '📚 ' + dept + ' — click Apply Now to enroll!';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2800);
+  }
+
+  // ── FORM VALIDATION ──
+  function submitForm() {
+    let valid = true;
+
+    const fields = [
+      { id: 'firstName', errId: 'firstNameErr', check: v => v.trim().length > 1 },
+      { id: 'lastName',  errId: 'lastNameErr',  check: v => v.trim().length > 1 },
+      { id: 'email',     errId: 'emailErr',     check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      { id: 'message',   errId: 'messageErr',   check: v => v.trim().length > 5 },
+    ];
+
+    fields.forEach(({ id, errId, check }) => {
+      const input = document.getElementById(id);
+      const err   = document.getElementById(errId);
+      if (!check(input.value)) {
+        err.style.display = 'block';
+        input.style.borderColor = 'var(--accent)';
+        valid = false;
+      } else {
+        err.style.display = 'none';
+        input.style.borderColor = '#6ee7b7';
+      }
+    });
+
+    if (valid) {
+      document.getElementById('formSuccess').style.display = 'block';
+      ['firstName','lastName','email','message'].forEach(id => {
+        document.getElementById(id).value = '';
+        document.getElementById(id).style.borderColor = '#e0d8cc';
+      });
+      document.getElementById('program').value = '';
+    }
+  }
+</script>
+</body>
+</html>
